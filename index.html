@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+  <div class="card">
+    <header class="card__header">
+      <p class="card__questao">Questão 1 de 5</p>
+      <p class="card__pontuacao">Pontuação: 0</p>
+    </header>
+
+    <h2 class="card__pergunta">Qual método remove os espaços das bordas de uma string?</h2>
+
+    <ol class="card__alternativas">
+      <li>.split()</li>
+      <li>.replace()</li>
+      <li>.trim()</li>
+      <li>.slice()</li>
+      <li>.indexOf()</li>
+    </ol>
+
+    <pre class="card__codigo">
+      <code>const nome = "  JavaScript  "
+            nome.<input type="text" id="resposta" placeholder="método"/>()
+      </code>
+    </pre>
+
+    <button class="card__botao">Confirmar resposta</button>
+
+    <div id="feedback" class="card__feedback"></div>
+  </div>
+</main>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
