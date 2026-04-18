@@ -1,0 +1,10 @@
+:root{
+    --cor-fundo-body:#1A1A1A;
+    --cor-fundo-card: #242424;
+    --cor-secundaria-fundo:#2E2E2E;
+    --cor-texto-destaque:#FFFFFF;
+    --cor-texto-primario:#F0F0F0;
+    --cor-texto-secundario:#888888;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-codigo: 'Source Code Pro', monospace;
+}
