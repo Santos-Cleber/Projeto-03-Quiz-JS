@@ -8,3 +8,108 @@
     --fonte-principal: 'Inter', sans-serif;
     --fonte-codigo: 'Source Code Pro', monospace;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--fonte-principal);
+    background-color:var(--cor-fundo-body);
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    min-height: 100vh; 
+}
+
+.card{
+    background-color: var(--cor-fundo-card);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 560px;
+    min-height: 600px;
+    padding: 32px;
+    border-radius: 16px;
+
+}
+.card__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.card__questao{
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+}
+
+.card__pontuacao{
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+}
+
+.card__pergunta{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cor-texto-primario);
+    margin-bottom: 24px;
+}
+
+.card__alternativas{
+    counter-reset:alternativas;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.card__alternativas li{
+    counter-increment: alternativas;
+    background-color: var(--cor-secundaria-fundo);
+    color: var(--cor-texto-primario);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.card__alternativas li::before{
+    content: counter(alternativas) ". ";
+}
+
+.card__codigo{
+    background-color: var(--cor-secundaria-fundo);
+    font-family: var(--fonte-codigo);
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.card__botao{
+    width: 100%;
+    padding: 12px;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cor-texto-primario);
+    background-color: var(--cor-secundaria-fundo);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#resposta{
+    font-family: var(--fonte-codigo);
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto-primario);
+    width: 120px;
+}
