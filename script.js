@@ -32,6 +32,7 @@ const questoes = [
 ]
 
 let atual = 0;
+let pontuacao = 0;
 
 const input = document.getElementById('resposta');
 const explicacao = document.getElementById('feedback');
@@ -41,13 +42,19 @@ confirmar.addEventListener('click', function(){
     const resposta = input.value.trim();
 
     if(resposta === questoes[atual].resposta){
-    explicacao.textContent = questoes[atual].explicacao;
-    explicacao.className = 'card__feedback card__feedback--correto';
-    atual++;
-    setTimeout(function(){
-        carregarQuestao();
-    }, 3000);
-    
+        explicacao.textContent = questoes[atual].explicacao;
+        explicacao.className = 'card__feedback card__feedback--correto';
+        pontuacao++;
+        atual++;
+        setTimeout(function(){
+            if(atual === questoes.length){
+                document.querySelector('.card__pontuacao').textContent = 'Pontuação: ' + pontuacao;
+                explicacao.textContent = 'Parabéns! Você respondeu todas as questões!';
+                explicacao.className = 'card__feedback card__feedback--correto';
+            } else {
+                carregarQuestao();
+            }
+        }, 3000);
     } else {
         explicacao.textContent = 'Errado. Tente novamente!';
         explicacao.className = 'card__feedback card__feedback--errado';
@@ -57,7 +64,7 @@ confirmar.addEventListener('click', function(){
 function carregarQuestao(){
     document.querySelector('.card__pergunta').textContent = questoes[atual].pergunta;
     document.querySelector('.card__questao').textContent = 'Questão ' + (atual + 1) + ' de 5';
-    document.querySelector('.card__pontuacao').textContent = 'Pontuação: ' + atual;
+    document.querySelector('.card__pontuacao').textContent = 'Pontuação: ' + pontuacao;
     document.querySelector('.card__alternativas').innerHTML = questoes[atual].alternativas.map(function(alt){
         return '<li>' + alt + '</li>';
     }).join('');
