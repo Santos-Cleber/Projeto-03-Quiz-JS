@@ -27,12 +27,11 @@ body{
 .card{
     background-color: var(--cor-fundo-card);
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 560px;
-    min-height: 600px;
     padding: 32px;
     border-radius: 16px;
+    overflow: visible;
 
 }
 .card__header{
@@ -112,4 +111,21 @@ body{
     background-color: var(--cor-fundo-card);
     color: var(--cor-texto-primario);
     width: 120px;
+}
+
+.card__feedback{
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.card__feedback--correto{
+    background-color: #1a3a2a;
+    color: #4caf82;
+}
+
+.card__feedback--errado{
+    background-color: #3a1a1a;
+    color: #cf6679;
 }
